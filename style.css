@@ -16,10 +16,10 @@ body{
 }
 
 .container{
-    height: 400px;
+    height: 300px;
     background-color: #232931;
     color: #fff;
-    border-radius: 25px;
+    border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
 }
 
@@ -163,14 +163,37 @@ body{
 .loc-button:hover{
     background: #1a237e;
 }
-
-@media (width < 600px){
-    .right-info{
-        bottom: 360px;
-        left: 30px;
-        margin-top: -50px;
+@media screen and (max-width: 600px) {
+    .container {
+        height: auto; /* Altura automática para conteúdo variável */
     }
-    .left-info{
-        width: 230px;
+
+    .left-info {
+        width: 100%; /* Ocupa a largura total */
+        float: none; /* Remove o float */
+    }
+
+    .pic-gradient,
+    .today-info,
+    .today-weather,
+    .right-info,
+    .day-info,
+    .days-list,
+    .btn-container {
+        position: static; /* Remove a posição absoluta */
+        width: 100%; /* Ocupa a largura total */
+    }
+    .days-list{
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        margin-left: 0px;
+    }
+    .today-info{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        margin-top: 15px;
+        margin-left: 25px;
     }
 }
